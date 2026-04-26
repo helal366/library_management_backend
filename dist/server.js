@@ -3,11 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const mongoose_1 = __importDefault(require("mongoose"));
 const app_1 = require("./app");
-const dotenv_1 = __importDefault(require("dotenv"));
 const mongoDB_1 = require("./configs/mongoDB");
-dotenv_1.default.config();
 let server;
 const PORT = process.env.PORT || 5000;
 async function main() {
