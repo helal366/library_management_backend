@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config()
 import express, { Application, NextFunction, Request, Response } from "express";
 import cors from "cors"
 import { booksRoutes } from "./app/controllers/BookControllers";
@@ -5,7 +7,7 @@ import { borrowBooksRoutes } from "./app/controllers/BorrowBookControllers";
 
 export const app:Application = express();
 app.use(cors({
-  origin:["http://localhost:5173" , process.env.CLIENT_URL as string],
+  origin:[process.env.CLIENT_URL as string, "http://localhost:5173"],
   credentials: true
 }))
 app.use(express.json());
