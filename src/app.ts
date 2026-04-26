@@ -6,8 +6,11 @@ import { booksRoutes } from "./app/controllers/BookControllers";
 import { borrowBooksRoutes } from "./app/controllers/BorrowBookControllers";
 
 export const app:Application = express();
+console.log("CLIENT_URL:", process.env.CLIENT_URL);
+console.log("CLIENT_URL2:", process.env.CLIENT_URL2);
 app.use(cors({
-  origin:[process.env.CLIENT_URL as string, "http://localhost:5173"],
+  origin:[process.env.CLIENT_URL as string, process.env.CLIENT_URL2 as string,process.env.CLIENT_URL3 as string, "http://localhost:5173"],
+   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   credentials: true
 }))
 app.use(express.json());

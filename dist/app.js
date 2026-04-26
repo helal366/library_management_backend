@@ -4,13 +4,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.app = void 0;
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const BookControllers_1 = require("./app/controllers/BookControllers");
 const BorrowBookControllers_1 = require("./app/controllers/BorrowBookControllers");
 exports.app = (0, express_1.default)();
+console.log("CLIENT_URL:", process.env.CLIENT_URL);
+console.log("CLIENT_URL2:", process.env.CLIENT_URL2);
 exports.app.use((0, cors_1.default)({
-    origin: ["http://localhost:5173", process.env.CLIENT_URL],
+    origin: [process.env.CLIENT_URL, process.env.CLIENT_URL2, "http://localhost:5173"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true
 }));
 exports.app.use(express_1.default.json());
