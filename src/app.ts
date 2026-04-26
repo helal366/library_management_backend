@@ -5,7 +5,7 @@ import { borrowBooksRoutes } from "./app/controllers/BorrowBookControllers";
 
 export const app:Application = express();
 app.use(cors({
-  origin:["http://localhost:5173" ,"https://library-management-frontend-sage.vercel.app"],
+  origin:["http://localhost:5173" , process.env.CLIENT_URL as string],
   credentials: true
 }))
 app.use(express.json());
