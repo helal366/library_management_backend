@@ -1,9 +1,9 @@
+import dotenv from "dotenv";
+dotenv.config()
 import {Server} from "http"
 import mongoose from "mongoose";
 import { app } from "./app";
-import dotenv from "dotenv";
 import { MONGODB_ALTAS_URI } from "./configs/mongoDB";
-dotenv.config()
 
 let server:Server;
 const PORT =process.env.PORT || 5000;

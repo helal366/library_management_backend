@@ -6,12 +6,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const app_1 = require("./app");
 const dotenv_1 = __importDefault(require("dotenv"));
+const mongoDB_1 = require("./configs/mongoDB");
 dotenv_1.default.config();
 let server;
 const PORT = process.env.PORT || 5000;
 async function main() {
     try {
-        await mongoose_1.default.connect(process.env.MONGODB_URI);
+        await mongoose_1.default.connect(mongoDB_1.MONGODB_ALTAS_URI);
         console.log("Connected to mongodb using mongoose");
         server = app_1.app.listen(PORT, () => {
             console.log(`App is listening the port ${PORT}`);
