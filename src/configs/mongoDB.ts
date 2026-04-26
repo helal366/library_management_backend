@@ -1,0 +1,1 @@
+export const MONGODB_ALTAS_URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@ac-yckmpgq-shard-00-00.tmsuubo.mongodb.net:27017,ac-yckmpgq-shard-00-01.tmsuubo.mongodb.net:27017,ac-yckmpgq-shard-00-02.tmsuubo.mongodb.net:27017/${process.env.DB_NAME}?ssl=true&replicaSet=atlas-s5oqbx-shard-0&authSource=admin&appName=Cluster0`;

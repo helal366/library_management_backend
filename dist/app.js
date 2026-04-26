@@ -10,7 +10,7 @@ const BookControllers_1 = require("./app/controllers/BookControllers");
 const BorrowBookControllers_1 = require("./app/controllers/BorrowBookControllers");
 exports.app = (0, express_1.default)();
 exports.app.use((0, cors_1.default)({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", process.env.CLIENT_URL],
     credentials: true
 }));
 exports.app.use(express_1.default.json());
